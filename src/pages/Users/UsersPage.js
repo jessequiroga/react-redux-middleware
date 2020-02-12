@@ -5,6 +5,7 @@ import { Row, Col } from 'antd';
 import { connect } from 'react-redux';
 import { fetchUsers } from '../../actions/UsersPageAction';
 import { bindActionCreators } from 'redux';
+import NavBar from './NavBar';
 
 const UserPage = (props) => {
     const { fetchUsers } = props;
@@ -16,8 +17,9 @@ const UserPage = (props) => {
     return (
         <div>
             <Row type="flex" justify="center">
-                <Col>
-                    <h1 style={{ marginTop: 30 }}>User Page</h1>
+                <Col span={20} style={{ margin: "30px 0px" }}>
+                    <NavBar
+                        title="User Page" />
                 </Col>
             </Row>
             <Row type="flex" justify="center">
