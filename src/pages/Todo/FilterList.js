@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
 
 const FilterList = props => {
     const { Option } = Select;
-
     const { selectedFilter, selectFilter } = props;
 
     const handleChange = (value) => {

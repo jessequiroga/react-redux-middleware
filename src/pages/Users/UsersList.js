@@ -19,8 +19,7 @@ const UsersList = (props) => {
                 <List.Item
                     actions={
                         [
-                            <a href={"/users/" + item.id + "/todo"} key="list-loadmore-edit">Todo</a>,
-                            <a href={"/users/" + item.id + "/albums"} key="list-loadmore-more">Albums</a>
+                            <a href={"/users/" + item.id + "/todo"} key="list-loadmore-edit">Todo</a>
                         ]}
                 >
                     <Skeleton avatar title={false} loading={item.loading} active>
@@ -37,7 +36,7 @@ const UsersList = (props) => {
             )}
         />
     );
-}
+};
 
 const mapStateToProps = (state) => {
     return {

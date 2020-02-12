@@ -6,7 +6,6 @@ import { bindActionCreators } from 'redux';
 
 const SearchBar = (props) => {
     const { Search } = Input;
-
     const { setKeyWord } = props;
 
     const onKeywordChange = ({ target }) => {

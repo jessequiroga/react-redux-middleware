@@ -22,7 +22,7 @@ const enhancer = composeEnhancers(
 const appStore = createStore(
     rootReducer,
     enhancer
-)
+);
 
 ReactDOM.render(
     <Provider store={appStore}>
