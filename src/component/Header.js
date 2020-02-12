@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageHeader } from 'antd';
+import { PageHeader, Button } from 'antd';
 
 const Header = (props) => {
     const { title, onBackGoto } = props;
@@ -13,8 +13,11 @@ const Header = (props) => {
             }}
             onBack={() => window.location.pathname = onBackGoto}
             title={title}
+            extra={[
+                <Button key="logoutBtn" type="danger" onClick={() => window.location.pathname = "/processLogout"}>Logout</Button>
+            ]}
         />
     );
-}
+};
 
 export default Header;
