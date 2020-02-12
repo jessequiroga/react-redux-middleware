@@ -36,8 +36,11 @@ export const fetchTodo = (userId) => {
             .then(data => {
                 dispatch(fetchTodoSuccess(data));
             })
-            .catch(error => dispatch(fetchTodoError(error)));
-    }
+            .catch(error => {
+                alert(error);
+                dispatch(fetchTodoError(error));
+            });
+    };
 };
 
 export const fetchTodoBegin = () => {
@@ -73,8 +76,11 @@ export const fetchUser = (userId) => {
             .then(data => {
                 dispatch(fetchUserSuccess(data));
             })
-            .catch(error => dispatch(fetchUserError(error)));
-    }
+            .catch(error => {
+                alert(error);
+                dispatch(fetchUserError(error));
+            });
+    };
 };
 
 export const fetchUserBegin = () => {

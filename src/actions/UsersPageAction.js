@@ -20,8 +20,11 @@ export const fetchUsers = () => {
             .then(data => {
                 dispatch(fetchUsersSuccess(data));
             })
-            .catch(error => dispatch(fetchUsersError(error)));
-    }
+            .catch(error => {
+                alert(error);
+                dispatch(fetchUsersError(error));
+            });
+    };
 };
 
 export const fetchUsersBegin = () => {
