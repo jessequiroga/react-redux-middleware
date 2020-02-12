@@ -5,7 +5,8 @@ const initialState = {
     todoList: [],
     selectedFilter: 'All',
     keyWord: '',
-    loading: false,
+    loadingTodo: false,
+    loadingUser: false,
     error: ''
 };
 
@@ -35,37 +36,37 @@ export const todoPageReducer = (state = initialState, action) => {
         case FETCH_TODO_BEGIN:
             return {
                 ...state,
-                loading: true
+                loadingTodo: true
             };
         case FETCH_TODO_SUCCESS:
             return {
                 ...state,
                 todoList: action.payLoad,
-                loading: false,
+                loadingTodo: false,
                 error: ''
             };
         case FETCH_TODO_ERROR:
             return {
                 ...state,
-                loading: false,
+                loadingTodo: false,
                 error: action.payLoad
             };
         case FETCH_USER_BEGIN:
             return {
                 ...state,
-                loading: true
+                loadingUser: true
             };
         case FETCH_USER_SUCCESS:
             return {
                 ...state,
                 user: action.payLoad,
-                loading: false,
+                loadingUser: false,
                 error: ''
             };
         case FETCH_USER_ERROR:
             return {
                 ...state,
-                loading: false,
+                loadingUser: false,
                 error: action.payLoad
             };
         default:

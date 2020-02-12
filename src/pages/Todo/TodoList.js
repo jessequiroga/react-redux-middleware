@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import SearchBar from './SearchBar';
 
 const TodoList = (props) => {
-    const { todoList, selectedFilter, keyWord, markAsDone } = props;
+    const { todoList, selectedFilter, keyWord, markAsDone, isTodoLoading } = props;
 
     const markDone = (id) => {
         markAsDone(id);
@@ -15,6 +15,7 @@ const TodoList = (props) => {
 
     return (
         <List
+            loading={isTodoLoading}
             style={{
                 backgroundColor: "white"
             }}
@@ -73,12 +74,13 @@ const mapStateToProps = (state) => {
     return {
         todoList: state.todoPage.todoList,
         selectedFilter: state.todoPage.selectedFilter,
-        keyWord: state.todoPage.keyWord
+        keyWord: state.todoPage.keyWord,
+        isTodoLoading: state.todoPage.loadingTodo
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({ markAsDone }, dispatch);
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
