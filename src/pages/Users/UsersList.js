@@ -3,10 +3,11 @@ import { List, Avatar, Skeleton } from 'antd';
 import { connect } from 'react-redux';
 
 const UsersList = (props) => {
-    const { handleKeyword, users } = props;
+    const { handleKeyword, users, isLoading } = props;
 
     return (
         <List
+            loading={isLoading}
             className="demo-loadmore-list"
             itemLayout="horizontal"
             dataSource={
@@ -41,7 +42,8 @@ const UsersList = (props) => {
 const mapStateToProps = (state) => {
     return {
         handleKeyword: state.userPage.keyWord,
-        users: state.userPage.users
+        users: state.userPage.users,
+        isLoading: state.userPage.loading
     };
 };
 
