@@ -27,7 +27,7 @@ const LoginPage = () => {
                             type="primary"
                             htmlType="submit"
                             className="login-form-button"
-                            style={{ marginTop: 30 }}
+                            style={{ marginTop: 30, width: "100%" }}
                             size="large"
                             onClick={() => {
                                 window.location.pathname = "/processlogin"
