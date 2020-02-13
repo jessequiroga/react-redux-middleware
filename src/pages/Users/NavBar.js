@@ -1,8 +1,10 @@
 import React from 'react';
 import { PageHeader, Button } from 'antd';
+import { useHistory } from 'react-router-dom';
 
 const NavBar = (props) => {
     const { title } = props;
+    const history = useHistory();
 
     return (
         <PageHeader
@@ -13,7 +15,7 @@ const NavBar = (props) => {
             }}
             title={title}
             extra={[
-                <Button key="logoutBtn" type="danger" onClick={() => window.location.pathname = "/processLogout"}>Logout</Button>
+                <Button key="logoutBtn" type="danger" onClick={() => history.push("/processLogout")}>Logout</Button>
             ]}
         />
     );

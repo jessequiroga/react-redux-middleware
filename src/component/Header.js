@@ -1,8 +1,10 @@
 import React from 'react';
 import { PageHeader, Button } from 'antd';
+import { useHistory } from "react-router-dom";
 
 const Header = (props) => {
     const { title, onBackGoto } = props;
+    const history = useHistory();
 
     return (
         <PageHeader
@@ -11,10 +13,10 @@ const Header = (props) => {
                 borderRadius: "10px",
                 backgroundColor: "white"
             }}
-            onBack={() => window.location.pathname = onBackGoto}
+            onBack={() => history.push(onBackGoto)}
             title={title}
             extra={[
-                <Button key="logoutBtn" type="danger" onClick={() => window.location.pathname = "/processLogout"}>Logout</Button>
+                <Button key="logoutBtn" type="danger" onClick={() => history.push("/processLogout")}>Logout</Button>
             ]}
         />
     );

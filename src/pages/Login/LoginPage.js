@@ -1,7 +1,10 @@
 import React from 'react';
 import { Icon, Input, Button, Row, Col } from 'antd';
+import { useHistory } from 'react-router-dom';
 
 const LoginPage = () => {
+    const history = useHistory();
+
     return (
         <div style={{ minHeight: "100vh", background: "#EEEEEE" }}>
             <Row type="flex" justify="center" >
@@ -30,7 +33,7 @@ const LoginPage = () => {
                             style={{ marginTop: 30, width: "100%" }}
                             size="large"
                             onClick={() => {
-                                window.location.pathname = "/processlogin"
+                                history.push("/processlogin")
                             }}
                         >Log in
                     </Button>

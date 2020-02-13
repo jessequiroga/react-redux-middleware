@@ -1,9 +1,11 @@
 import React from 'react';
 import { List, Avatar, Skeleton } from 'antd';
 import { connect } from 'react-redux';
+import { useHistory } from "react-router-dom";
 
 const UsersList = (props) => {
     const { handleKeyword, users, isLoading } = props;
+    const history = useHistory();
 
     return (
         <List
@@ -20,7 +22,7 @@ const UsersList = (props) => {
                 <List.Item
                     actions={
                         [
-                            <a href={"/users/" + item.id + "/todo"} key="list-loadmore-edit">Todo</a>
+                            <a onClick={() => history.push("/users/" + item.id + "/todo")} key="list-loadmore-edit">Todo</a>
                         ]}
                 >
                     <Skeleton avatar title={false} loading={item.loading} active>
